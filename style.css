@@ -2,7 +2,7 @@ body{
     position: relative;
     width: 1440px;
     height: 1024px;
-
+    
     background: #f3f5fc;
 
 }
@@ -10,8 +10,10 @@ body{
     position: absolute;
     left: 84px;
     top: 40px;
-    
+
 }
+
+/*index.html*/
 .front-button{
     display: flex;
     flex-direction: row;
@@ -19,6 +21,7 @@ body{
     padding: 24px;
     gap: 8px;
 }
+
 .start-button{
     position:absolute;
     width: 317px;
@@ -28,6 +31,7 @@ body{
 
     background: #0a3871;
     border-radius: 24px;
+    border: 0;
 
     font-family: 'Inter';
     font-style: normal;
@@ -68,3 +72,120 @@ body{
     flex-grow: 1;
 }
 
+/*addWord.html*/
+.wrapper textarea::placeholder{
+    color: #0a3871;
+}
+.wrapper textarea{
+    position: absolute;
+    width: 299px;
+    height: 48px;
+    left: 376px;
+    top: 256px;
+    outline: none;
+    resize: none;
+
+    background: #f3f5fc;
+    border: 0;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+
+    color: #0a3871;
+}
+
+.aviso{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 26px;
+
+    position: absolute;
+    width: 115px;
+    height: 18px;
+    left: 376px;
+    top: 667px;
+}
+.aviso img{
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 1px;
+    bottom: 0%;
+
+    width: 16px;
+    height: 16px;
+
+}
+.aviso p{
+    width: 91px;
+    height: 18px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+
+    color: #495057;
+
+    opacity: 0.8;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.add-add-button{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+
+    position: absolute;
+    width: 688px;
+    height: 67px;
+    left: 376px;
+    top: 701px;
+}
+.add-add-button > input{
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+
+    width: 332px;
+    height: 67px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+.save-button{
+    background: #0A3871;
+    border-radius: 24px;
+    border: 0;
+
+    color: #FFFFFF;
+
+}
+.cancel-button{
+    box-sizing: border-box;
+
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+
+    color: #0A3871;
+
+}
