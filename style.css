@@ -20,6 +20,7 @@ body{
     align-items: flex-start;
     padding: 24px;
     gap: 8px;
+    
 }
 
 .start-button{
@@ -37,15 +38,18 @@ body{
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 114px;
     align-items: center;
     text-align: center;
+    text-decoration: none;
 
     color: white;
 
     flex: none;
     order: 0;
     flex-grow: 1;
+
+    cursor: pointer;
 
 }
 .add-button{
@@ -62,14 +66,17 @@ body{
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 67px;
     text-align: center;
+    text-decoration: none;
 
     color: #0a3871;
 
     flex: none;
     order: 0;
     flex-grow: 1;
+
+    cursor: pointer;
 }
 
 /*addWord.html*/
@@ -153,7 +160,44 @@ body{
     left: 376px;
     top: 701px;
 }
-.add-add-button > input{
+.save-button{
+    background: #0A3871;
+    border-radius: 24px;
+    border: 0;
+
+    color: #FFFFFF;
+/**/
+    align-items: flex-start;
+    gap: 8px;
+
+    width: 332px;
+    height: 67px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 67px;
+    text-align: center;
+    text-decoration: none;
+    
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+
+    cursor: pointer;
+}
+.cancel-button{
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+
+    color: #0A3871;
+/**/
     align-items: flex-start;
     padding: 24px;
     gap: 8px;
@@ -167,25 +211,12 @@ body{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
+    
 
     flex: none;
     order: 0;
     flex-grow: 1;
-}
-.save-button{
-    background: #0A3871;
-    border-radius: 24px;
-    border: 0;
 
-    color: #FFFFFF;
-
-}
-.cancel-button{
-    box-sizing: border-box;
-
-    border: 1px solid #0A3871;
-    border-radius: 24px;
-
-    color: #0A3871;
-
+    cursor: pointer;
+    
 }
