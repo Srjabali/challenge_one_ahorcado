@@ -12,6 +12,7 @@ function escojerPalabrasSecretas(){
 escojerPalabrasSecretas();
 
 
+
     // document.getElementById("start-button").style.display = "none";
     // document.getElementById("add-button").style.display = "none";
     // location.href = "game.html";

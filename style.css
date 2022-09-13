@@ -147,26 +147,28 @@ body{
     order: 1;
     flex-grow: 0;
 }
-.add-add-button{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 24px;
-
+.a .add-add-button{
     position: absolute;
     width: 688px;
     height: 67px;
     left: 376px;
     top: 701px;
 }
-.save-button{
-    background: #0A3871;
-    border-radius: 24px;
-    border: 0;
-
-    color: #FFFFFF;
-/**/
+.g .add-add-button{
+    position: absolute;
+    width: 688px;
+    height: 67px;
+    left: 376px;
+    top: 901px;
+}
+.add-add-button{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+.add-add-button > a, input{
     align-items: flex-start;
     gap: 8px;
 
@@ -180,17 +182,22 @@ body{
     line-height: 67px;
     text-align: center;
     text-decoration: none;
-    
 
     flex: none;
     order: 0;
     flex-grow: 1;
-
-    cursor: pointer;
 }
-.cancel-button{
-    text-decoration: none;
 
+.blue-button{
+    background: #0A3871;
+    border-radius: 24px;
+    border: 0;
+
+    color: #FFFFFF;
+/**/
+    
+}
+.grey-button{
     box-sizing: border-box;
 
     border: 1px solid #0A3871;
@@ -198,25 +205,5 @@ body{
 
     color: #0A3871;
 /**/
-    align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
-
-    width: 332px;
-    height: 67px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    
-
-    flex: none;
-    order: 0;
-    flex-grow: 1;
-
-    cursor: pointer;
     
 }
