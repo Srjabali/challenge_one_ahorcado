@@ -1,7 +1,6 @@
 let palabras = ["ALURA", "ORACLE", "ONE", "JAVASCRIPT", "HTML" ];
 let tablero = document.getElementById("keya").getContext("2d");
 
-
 function escojerPalabrasSecretas(){
     let palabra = palabras[Math.floor(Math.random() * palabras.length)]
     palabraSecreta = palabra
@@ -9,11 +8,13 @@ function escojerPalabrasSecretas(){
     return palabraSecreta;
 }
 
-escojerPalabrasSecretas();
-dibujarCanvas();
-dibujarLinea();
-dibujarLetra();
-ere();
+
+
+
+function testClick(){
+    escojerPalabrasSecretas();
+    dibujarLinea();
+}
 
 const keyBoard = document.getElementById('key');
 
@@ -22,14 +23,33 @@ keyBoard.addEventListener('keydown', e=>{
     const hola=(e.key.toUpperCase());
     console.log(hola);
 
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.fillStyle = "red";
+    tablero.strokeStyle = "#0a3871";
+
+    tablero.font="70px Verdana";
+    tablero.fillStyle = "#0a3871";
+    tablero.textAlign="justify";
+
+    
+
+    let anchura = 600/palabraSecreta.length;
+
     for(let i=0; i<palabraSecreta.length; i++){
+        
+        
         if(hola==palabraSecreta[i]){
-                   
-        }
+            tablero.moveTo(450 + (anchura * i), 640)
+            tablero.lineTo(500 + (anchura * i), 640)
+            
+            tablero.fillText(palabraSecreta[i],450 +(anchura*i), 640, 500)        }
         else
             console.log("chao");
         }          
-
+        tablero.stroke();
+        tablero.closePath();
 });
 
 function dibujarCanvas(){
@@ -53,21 +73,14 @@ function dibujarLinea(){
     tablero.fillStyle = "#f3f5fc";
     tablero.strokeStyle = "#0a3871";
 
-    let lm;
-    let ll;
-
     let anchura = 600/palabraSecreta.length;
-    for (let i = 0; i < palabraSecreta.length; i++){
-        lm = tablero.moveTo(450 + (anchura * i), 640)
-        ll = tablero.lineTo(500 + (anchura * i), 640)
+
+    for (i = 0; i < palabraSecreta.length; i++){
+        tablero.moveTo(450 + (anchura * i), 640)
+        tablero.lineTo(500 + (anchura * i), 640)
     }
     tablero.stroke();
     tablero.closePath();
-
-}
-function ere(){
-    let r;
-    return r;
 }
 
 
@@ -77,11 +90,10 @@ function dibujarLetra(){
     tablero.textAlign="justify";
 
     let anchura = 600/palabraSecreta.length;
-    
-    for (let i = 0; i < palabraSecreta.length; i++){
 
-        r[i] = tablero.fillText(palabraSecreta[i],450 +(anchura*i), 640, 500)
-    }
-
+    for (leti = 0; i < palabraSecreta.length; i++){
+        tablero.fillText(palabraSecreta[i],450 +(anchura*i), 640, 500)   
+    } 
 }
 
+dibujarCanvas();
