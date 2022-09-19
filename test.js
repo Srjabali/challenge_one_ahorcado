@@ -1,55 +1,46 @@
-let palabras = ["ALURA", "ORACLE", "ONE", "JAVASCRIPT", "HTML" ];
+let palabras = ["ONE", "ALURA", "ORACLE", "JAVASCRIPT", "HTML" ];
+
 let tablero = document.getElementById("keya").getContext("2d");
 
 function escojerPalabrasSecretas(){
     let palabra = palabras[Math.floor(Math.random() * palabras.length)]
     palabraSecreta = palabra
     console.log(palabra)
-    return palabraSecreta;
 }
 
+let r=0;
+let foo=0;
+document.addEventListener("keydown", e=>{
 
-
-
-function testClick(){
-    escojerPalabrasSecretas();
-    dibujarLinea();
-}
-
-const keyBoard = document.getElementById('key');
-
-keyBoard.addEventListener('keydown', e=>{
-
-    const hola=(e.key.toUpperCase());
-    console.log(hola);
-
-    tablero.lineWidth = 6;
-    tablero.lineCap = "round";
-    tablero.lineJoin = "round";
-    tablero.fillStyle = "red";
-    tablero.strokeStyle = "#0a3871";
+    const palabraComparar=(e.key.toUpperCase());
+    console.log (palabraComparar);
 
     tablero.font="70px Verdana";
     tablero.fillStyle = "#0a3871";
     tablero.textAlign="justify";
 
-    
-
     let anchura = 600/palabraSecreta.length;
 
     for(let i=0; i<palabraSecreta.length; i++){
         
-        
-        if(hola==palabraSecreta[i]){
-            tablero.moveTo(450 + (anchura * i), 640)
-            tablero.lineTo(500 + (anchura * i), 640)
+        if (palabraComparar==palabraSecreta[i]){
             
-            tablero.fillText(palabraSecreta[i],450 +(anchura*i), 640, 500)        }
-        else
-            console.log("chao");
-        }          
-        tablero.stroke();
-        tablero.closePath();
+            tablero.fillText(palabraSecreta[i],450 +(anchura*i), 620)
+
+            r++;
+
+        }   
+    }
+
+    if (r==0){
+
+        foo=foo+1;
+        console.log(foo)
+        dibujarAhorcado(foo);
+
+    }
+
+    else r=0;
 });
 
 function dibujarCanvas(){
@@ -84,16 +75,76 @@ function dibujarLinea(){
 }
 
 
-function dibujarLetra(){
-    tablero.font="70px Verdana";
-    tablero.fillStyle = "#0a3871";
-    tablero.textAlign="justify";
+function dibujarAhorcado(foo){
 
-    let anchura = 600/palabraSecreta.length;
+    tablero.lineWidth = 8;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.fillStyle = "#f3f5fc";
+    tablero.strokeStyle = "#0a3871";
 
-    for (leti = 0; i < palabraSecreta.length; i++){
-        tablero.fillText(palabraSecreta[i],450 +(anchura*i), 640, 500)   
-    } 
+    tablero.beginPath();
+
+    switch(foo){
+        //Soporte
+        case 1:
+            tablero.moveTo(650, 500);
+            tablero.lineTo(650, 100);
+            break;
+        //Soporte 2
+        case 2:
+            tablero.moveTo(650, 100);
+            tablero.lineTo(800, 100);
+            break;
+        //soporte 3
+        case 3:
+            tablero.moveTo(800, 100);
+            tablero.lineTo(800, 150);
+            break;
+        //cabeza
+        case 4:
+            tablero.arc(800,190,40,5,12*Math.PI);
+            break;
+        //cuerpo
+        case 5:
+            tablero.moveTo(800, 230);
+            tablero.lineTo(800, 400);
+            break;
+        //Brazo derecho
+        case 6:
+            tablero.moveTo(800, 230);
+            tablero.lineTo(850, 300);
+            break;
+        //brazo izquierdo
+        case 7:
+            tablero.moveTo(800, 230);
+            tablero.lineTo(750, 300);
+            break;
+        //pierna derecha
+        case 8:
+            tablero.moveTo(800, 400);
+            tablero.lineTo(850, 470);
+            break;
+        //pierna izquierda
+        case 9:
+            tablero.moveTo(800, 400);
+            tablero.lineTo(750, 470);
+            break;
+
+    }
+   
+    tablero.stroke();
+    tablero.closePath();
 }
 
+escojerPalabrasSecretas();
+
 dibujarCanvas();
+
+
+
+dibujarLinea();
+
+
+
+
