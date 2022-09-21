@@ -85,8 +85,8 @@ body{
 }
 .wrapper textarea{
     position: absolute;
-    width: 299px;
-    height: 48px;
+    width: 400px;
+    height: 100px;
     left: 376px;
     top: 256px;
     outline: none;
@@ -186,6 +186,8 @@ body{
     flex: none;
     order: 0;
     flex-grow: 1;
+
+    cursor: pointer;
 }
 
 .blue-button{

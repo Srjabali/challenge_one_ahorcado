@@ -1,29 +1,44 @@
-let palabras = ["ONE", "ALURA", "ORACLE", "JAVASCRIPT", "HTML" ];
+let newWord = document.getElementById("new-Word");
+let addButton = documment.getElementById("save-button");
 
-let tablero = document.getElementById("keya").getContext("2d");
-
-function escojerPalabrasSecretas(){
-    let palabra = palabras[Math.floor(Math.random() * palabras.length)]
-    palabraSecreta = palabra
-    console.log(palabra)
+function hola(){
+    alert("hola")
 }
-let usedLetters = [];
-let contadorFallos = 0;
 
-document.addEventListener("keydown", e=>{
+
+
+// function hi(){
     
-    let palabraIngresada = e.key.toUpperCase();
-    console.log (palabraIngresada);
+// let palabras = ["ONE", "ALURA", "ORACLE", "JAVASCRIPT", "HTML" ];
+
+// let tablero = document.getElementById("keya").getContext("2d");
+
+// function escojerPalabrasSecretas(){
+//     let palabra = palabras[Math.floor(Math.random() * palabras.length)]
+//     palabraSecreta = palabra
+//     console.log(palabraSecreta.length)
+// }
+
+// let usedLetters = [];
+// let contadorFallos = 0;
+// let aciertos = 0;
+
+// document.addEventListener("keydown", e=>{
+//    //"key" hace que entrege el valor que uno ingresa
+     
+//     let palabraIngresada = e.key.toUpperCase();
+//     console.log (palabraIngresada);
  
-    //
-    if(palabraIngresada.match(/^[a-zñ]$/i) && !usedLetters.includes(palabraIngresada)){
-        console.log("hola")
-        console.log(usedLetters)
-    };
-});
+//     //
+//     if(palabraIngresada.match(/^[a-zñ]$/i) && !usedLetters.includes(palabraIngresada)){
+//         usedLetters.push(palabraIngresada)
+        
+//         console.log(usedLetters)
+    
 //         tablero.font="70px Verdana";
 //         tablero.fillStyle = "#0a3871";
 //         tablero.textAlign="justify";
+
 //         let anchura = 600/palabraSecreta.length;
 //         let haFallado = true;
 
@@ -34,9 +49,14 @@ document.addEventListener("keydown", e=>{
 //                 tablero.fillText(palabraSecreta[i],450 +(anchura*i), 620)
 //                 console.log(palabraSecreta)
 //                 haFallado = false;
+//                 aciertos++;
 
 //             }  
 
+//         }
+
+//         if(aciertos == palabraSecreta.length){
+//             alert("you win!")
 //         }
 
 //         if (haFallado){
@@ -54,8 +74,8 @@ document.addEventListener("keydown", e=>{
 
 //         }
 
-//         else r=0;
-// }
+//     };
+
 // });
 
 // function dibujarCanvas(){
@@ -158,4 +178,7 @@ document.addEventListener("keydown", e=>{
 
 
 
+
+
+// }
 
