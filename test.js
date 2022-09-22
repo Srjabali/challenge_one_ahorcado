@@ -1,9 +1,35 @@
-let newWord = document.getElementById("new-Word");
-let addButton = documment.getElementById("save-button");
+const newWord = document.getElementById('new-word')
+// let word = [];
 
-function hola(){
-    alert("hola")
+function saveButton(){
+    console.log(newWord)
+    localStorage.setItem('dato', newWord.value);
+    location.href="game.html"
+    
+
+    if (dato){
+
+        
+        
+
+        
+
+        console.log(word)
+    }
+    
 }
+
+
+
+
+// function saveButton(){
+//     const newWord = document.getElementById('new-word').value;
+    
+//     location.href="game.html"
+//     palabras.push(newWord)
+
+//     console.log(palabras);
+// }
 
 
 

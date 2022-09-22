@@ -7,6 +7,13 @@ let usedLetters = [];
 let contadorFallos = 0;
 let aciertos = 0;
 
+//
+let word = [];
+
+const dato = localStorage.getItem('dato');
+word.push(dato)
+console.log(word);
+//
 
 function escojerPalabrasSecretas(){
     let palabra = palabras[Math.floor(Math.random() * palabras.length)]
@@ -15,7 +22,7 @@ function escojerPalabrasSecretas(){
 }
 
 document.addEventListener("keydown", e=>{
-
+    
     //"key" hace que entrege el valor que uno ingresa
       
      let palabraIngresada = e.key.toUpperCase();
