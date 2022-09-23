@@ -1,26 +1,19 @@
-const newWord = document.getElementById('new-word')
-// let word = [];
+
 
 function saveButton(){
-    console.log(newWord)
-    localStorage.setItem('dato', newWord.value);
-    location.href="game.html"
-    
+    var newWord = document.getElementById('new-word').value;
 
-    if (dato){
-
-        
-        
-
-        
-
-        console.log(word)
+    if(localStorage.getItem('data') == null){
+        localStorage.setItem('data', '[]');
     }
     
+    var old_data = JSON.parse(localStorage.getItem('data'));
+    old_data.push(newWord)
+
+    localStorage.setItem('data', JSON.stringify(old_data));
+
+    // location.href="game.html"
 }
-
-
-
 
 // function saveButton(){
 //     const newWord = document.getElementById('new-word').value;
