@@ -86,7 +86,7 @@ body{
 .wrapper textarea{
     position: absolute;
     width: 400px;
-    height: 100px;
+    height: 400px;
     left: 376px;
     top: 256px;
     outline: none;
@@ -196,8 +196,7 @@ body{
     border: 0;
 
     color: #FFFFFF;
-/**/
-    
+/**/ 
 }
 .grey-button{
     box-sizing: border-box;
@@ -208,4 +207,79 @@ body{
     color: #0A3871;
 /**/
     
+}
+/*for phone*/
+@media screen and (max-width:450px){
+    body{
+        width: 450px;
+        height: 950px;
+    }
+    #logo{
+        width: 32px;
+        height: 48px;
+        top: 24px;
+        left: 16px;
+    }
+    .start-button{
+        width: 317px;
+        height: 105px;
+        top: 281px;
+        left: 29px;
+    }
+    .add-button{
+        width: 278px;
+        height: 67px;
+        left: 48px;
+        top: 402px;
+    }
+    .canvas{
+        position: absolute;
+        width: 700px;
+        height: 530px;
+        top: 90px;
+        left: -248px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .g .add-add-button{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+
+        position: absolute;
+        width: 343px;
+        height: 158px;
+        left: 16px;
+        top: 699px;
+    }
+    .wrapper textarea{
+        width: 343px;
+        height: 500px;
+        top: 152px;
+        left: 16px;
+    }
+    .aviso{
+        width: 115px;
+        height: 18px;
+        top: 451px;
+        left: 16px;
+    }
+    .a .add-add-button{
+        width: 343px;
+        height: 158px;
+        top: 485px;
+        left: 16px;
+        gap: 24px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        position: absolute;
+
+    }
 }
