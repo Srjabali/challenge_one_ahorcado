@@ -25,32 +25,38 @@ document.addEventListener("keydown", e => {
         tablero.fillStyle = "#0a3871";
         tablero.textAlign = "justify";
 
-        let anchura = 600/palabraSecreta.length;
+        let anchura = 700/palabraSecreta.length;
         let haFallado = true;
         //mostrar por pantalla palabra correcta
         for (let i = 0; i < palabraSecreta.length; i++) {
             if (palabraIngresada == palabraSecreta[i]) {
 
-                tablero.fillText(palabraSecreta[i], 450 + (anchura * i), 620)
+                tablero.fillText(palabraSecreta[i], 450 + (anchura * i), 530)
                 haFallado = false;
                 aciertos++;
             }
         }
+        //mostrar ganaste
         if (aciertos == palabraSecreta.length) {
-            tablero.fillText("you win!", 150, 120)
+            tablero.fillText("you", 450, 120)
+            tablero.fillText("win!", 450, 200)
         }
+        //ups! jeje!
         if (haFallado) {
 
+            if (contadorFallos == 1) {
+                tablero.fillText("you", 450, 120);
+                tablero.fillText("lose!", 450, 200);
+            }
+            //palabras erroneas por pantalla
             tablero.font = "30px Verdana";
             let anchuraMalita = 600 / 10;
-            tablero.fillText(palabraIngresada, 470 + (anchuraMalita * contadorFallos), 750)
+            tablero.fillText(palabraIngresada, 530 + (anchuraMalita * contadorFallos), 600)
 
             contadorFallos++;
             dibujarAhorcado(contadorFallos);
 
-            if (contadorFallos == 9) {
-                alert("you lose")
-            }
+            
         }
     };
 });
@@ -96,6 +102,9 @@ function saveButton() {
         location.href = "game.html"
     }
 }
+
+function cancel(){location.href = "index.html"}
+
 
 
 

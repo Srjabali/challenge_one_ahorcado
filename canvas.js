@@ -4,11 +4,11 @@ function dibujarCanvas(){
     tablero.lineJoin = "round";
     tablero.fillStyle = "#f3f5fc";
     tablero.strokeStyle = "#0a3871";
-
-    tablero.fillRect(0, 0, 1200, 860);
+    //linea piso
+    tablero.fillRect(0, 0, 1200, 680);
     tablero.beginPath();
-    tablero.moveTo(600, 500);
-    tablero.lineTo(850, 500);
+    tablero.moveTo(600, 450);
+    tablero.lineTo(1000, 450);//cambie aqui
     tablero.stroke();
     tablero.closePath();
 }
@@ -19,10 +19,10 @@ function dibujarLinea(){
     tablero.fillStyle = "#f3f5fc";
     tablero.strokeStyle = "#0a3871";
 
-    let anchura = 600/palabraSecreta.length;
+    let anchura = 700/palabraSecreta.length;
     for (let i = 0; i < palabraSecreta.length; i++){
-        tablero.moveTo(450 + (anchura * i), 640)
-        tablero.lineTo(500 + (anchura * i), 640)
+        tablero.moveTo(450 + (anchura * i), 540)
+        tablero.lineTo(500 + (anchura * i), 540)// combie aqui!
     }
     tablero.stroke();
     tablero.closePath();
@@ -40,47 +40,47 @@ function dibujarAhorcado(contadorFallos){
     switch(contadorFallos){
         //Soporte
         case 1:
-            tablero.moveTo(650, 500);
-            tablero.lineTo(650, 100);
+            tablero.moveTo(650, 450);
+            tablero.lineTo(650, 50);
             break;
         //Soporte 2
         case 2:
-            tablero.moveTo(650, 100);
-            tablero.lineTo(800, 100);
+            tablero.moveTo(650, 50);
+            tablero.lineTo(800, 50);
             break;
         //soporte 3
         case 3:
-            tablero.moveTo(800, 100);
-            tablero.lineTo(800, 150);
+            tablero.moveTo(800, 50);
+            tablero.lineTo(800, 100);
             break;
         //cabeza
         case 4:
-            tablero.arc(800,190,40,5,12*Math.PI);
+            tablero.arc(800,140,40,5,12*Math.PI);
             break;
         //cuerpo
         case 5:
-            tablero.moveTo(800, 230);
-            tablero.lineTo(800, 400);
+            tablero.moveTo(800, 185);
+            tablero.lineTo(800, 350);
             break;
         //Brazo derecho
         case 6:
-            tablero.moveTo(800, 230);
-            tablero.lineTo(850, 300);
+            tablero.moveTo(800, 180);
+            tablero.lineTo(850, 250);
             break;
         //brazo izquierdo
         case 7:
-            tablero.moveTo(800, 230);
-            tablero.lineTo(750, 300);
+            tablero.moveTo(800, 180);
+            tablero.lineTo(750, 250);
             break;
         //pierna derecha
         case 8:
-            tablero.moveTo(800, 400);
-            tablero.lineTo(850, 470);
+            tablero.moveTo(800, 350);
+            tablero.lineTo(850, 420);
             break;
         //pierna izquierda
         case 9:
-            tablero.moveTo(800, 400);
-            tablero.lineTo(750, 470);
+            tablero.moveTo(800, 350);
+            tablero.lineTo(750, 420);
             break;
 
     }
