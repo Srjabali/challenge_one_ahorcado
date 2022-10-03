@@ -9,6 +9,7 @@ let aciertos = 0;
 words();
 escojerPalabrasSecretas();
 console.log(palabras)
+
 document.addEventListener("keydown", e => {
 
     //"key" hace que entrege el valor que uno ingresa
@@ -37,26 +38,31 @@ document.addEventListener("keydown", e => {
             }
         }
         //mostrar ganaste
+        tablero.font = "50px Verdana";
+        tablero.fillStyle = "green";
         if (aciertos == palabraSecreta.length) {
-            tablero.fillText("you", 450, 120)
-            tablero.fillText("win!", 450, 200)
+            tablero.fillText("You", 450, 220)
+            tablero.fillText("win!", 450, 300)
+            reload();
         }
         //ups! jeje!
+        tablero.font = "50px Verdana";
+        tablero.fillStyle = "red";
         if (haFallado) {
-
-            if (contadorFallos == 1) {
-                tablero.fillText("you", 450, 120);
-                tablero.fillText("lose!", 450, 200);
+            if (contadorFallos == 8) {
+                tablero.fillText("You", 450, 220);
+                tablero.fillText("lose!", 450, 300);
+                alert("La palabra secreta era " + palabraSecreta)
+                reload();
             }
             //palabras erroneas por pantalla
             tablero.font = "30px Verdana";
+            tablero.fillStyle = "#0a3871";
             let anchuraMalita = 600 / 10;
             tablero.fillText(palabraIngresada, 530 + (anchuraMalita * contadorFallos), 600)
 
             contadorFallos++;
             dibujarAhorcado(contadorFallos);
-
-            
         }
     };
 });
@@ -105,8 +111,9 @@ function saveButton() {
 
 function cancel(){location.href = "index.html"}
 
+function reload(){location.reload()}
 
-
-
-
-
+function reload(){
+    document.addEventListener('keydown', _ => { // el _ es para indicar la ausencia de parametros
+    location.reload();
+});}
